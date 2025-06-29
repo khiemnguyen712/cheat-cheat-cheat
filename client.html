@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send Hint</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="hint" placeholder="Enter hint (e.g., ABC)" maxlength="10">
+  <button onclick="sendHint()">Send</button>
+  <script>
+    const ws = new WebSocket('ws://localhost:8080');
+    ws.onopen = () => console.log('Connected to server');
+    ws.onclose = () => console.log('Disconnected from server');
+    function sendHint() {
+      const hint = document.getElementById('hint').value;
+      if (hint && ws.readyState === WebSocket.OPEN) {
+        ws.send(hint);
+        document.getElementById('hint').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

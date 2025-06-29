@@ -1,0 +1,13 @@
+{
+  "name": "overlay-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start-server": "node server.js"
+  },
+  "dependencies": {
+    "electron": "^26.2.4",
+    "ws": "^8.18.0"
+  }
+}

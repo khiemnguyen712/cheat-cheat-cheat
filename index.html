@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Overlay App</title>
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: Arial, sans-serif;
+    }
+    #text {
+      color: white;
+      font-size: 24px;
+      padding: 5px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="text">Waiting...</div>
+  <script>
+    const { ipcRenderer } = require('electron');
+    ipcRenderer.on('update-text', (event, message) => {
+      document.getElementById('text').innerText = message;
+    });
+  </script>
+</body>
+</html>

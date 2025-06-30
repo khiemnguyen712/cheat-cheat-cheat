@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Overlay App</title>
   <style>
@@ -8,16 +9,18 @@
       background: transparent;
       font-family: Arial, sans-serif;
     }
+
     #text {
       color: white;
-      font-size: 24px;
+      font-size: 7px; /* Font size */
       padding: 5px;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
+
 <body>
-  <div id="text">Waiting...</div>
+  <div id="text">WR</div>
   <script>
     const { ipcRenderer } = require('electron');
     ipcRenderer.on('update-text', (event, message) => {
@@ -25,4 +28,5 @@
     });
   </script>
 </body>
+
 </html>

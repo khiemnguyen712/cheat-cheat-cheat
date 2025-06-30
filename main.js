@@ -7,7 +7,7 @@ let isVisible = true
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 200,
-        height: 50,
+        height: 50, // Determines the Height of the windows
         x: 1400,
         y: 60,
         frame: false,

@@ -8,8 +8,8 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 200,
         height: 50, // Determines the Height of the windows
-        x: 1400,
-        y: 60,
+        x: 0, // Determines the horizontal position of the windows
+        y: 0, // Determines the vertical position of the windows
         frame: false,
         transparent: true,
         alwaysOnTop: true,
